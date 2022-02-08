@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends "login.html" %}
+    {% block content %}
+    <div class="login-container mt-0  ">
+
+        <div class="con">
+            <label style="color: whitesmoke;" >REGISTER</label>  
+            <hr class="hr">
+            <form action="" method="post">
+                {% csrf_token %}
+
+            <label style="color: whitesmoke;" >UserName : </label>  
+                <input type="text" id="username" name="username" class="form-control">
+                <span style="color: red;" id="uname"></span><br>
+                <label style="color: whitesmoke;" >EMAIL : </label>  
+
+                <input type="text" id="email" name="email" class="form-control">
+                <span style="color: red;" id="em"></span><br>
+
+                <label style="color: whitesmoke;" >PASSWORD</label>  
+                <input type="text" id="password" name="password" class="form-control">
+                <span style="color: red;" id="pass_alert1"></span><br>
+
+                <label style="color: whitesmoke;" >CONFIRM PASSWORD</label>  
+
+                <input type="text" id="c_password" name="c_password" class="form-control">
+                <span id="pass_alert2" style="color: red;"></span><br>
+
+
+                <div class="d-flex  justify-content-start">
+
+                    <input type="submit" value="REGISTER" id="savebtn" class="btn btn-primary col-3">
+
+                </div>
+            </form>
+            <div class="d-flex  justify-content-end ">
+                <a href="{% url 'login_save' %}" class="col-3">Login</a>
+
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

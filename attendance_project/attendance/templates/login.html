@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body id="back">
+    <!-- <h1 id="h">heloo</h1> -->
+
+    <div class="site-logo  d-flex mt-4 ">
+        <a href="/" class="font-weight-bold col-3 ">
+            <img style="margin-top: -2px;" src="{% static 'css/dw.png' %}" width="150">
+        </a>
+        <h2 class=" header text-center mt-4 col-7">
+            ATTENDANCE SYSTEM
+
+        </h2>
+    </div>
+    {% block content %}
+    <div class="login-container mt-2  ">
+
+        <div class="con">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label style="color: whitesmoke;" >LOGIN</label> 
+                <hr class="hr">
+                <label style="color: whitesmoke;" >UserName : </label> 
+                <input type="text" id="uname" name="username" class="form-control">
+                <span id="username" style="color: red;"></span><br>
+                <label style="color: whitesmoke;" for="">PASSWORD : </label> 
+                <input type="password" id="mypassword" name="password" class="form-control">
+                <span id="password" style="color: red;"></span><br>
+                <div class="d-flex   justify-content-start">
+                    <label class="col-1 p-0"  style="color: whitesmoke;" > <input type="checkbox" onclick="myFunction()">Show Password</label> 
+                   
+
+                </div>
+
+                <div class="d-flex  justify-content-start mt-2">
+
+
+
+                    <input type="submit" value="LOGIN" id="login_id" class="btn btn-outline-primary col-3">
+
+                </div>
+                <div class="d-flex  justify-content-end ">
+                    <a href="{% url 'register' %}" class="col-3">Register</a>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/login&register.js' %}"></script>
+</body>
+
+</html>
